@@ -7,23 +7,17 @@
 	<version>1.0-SNAPSHOT</version>
 	<name>TestNG Maven Webapp</name>
 	<url>http://maven.apache.org</url>
+	
+	
 	<properties>
 		<spring.version>3.2.2.RELEASE</spring.version>
 		<jdk.version>1.8</jdk.version>
 		<testng.version>6.14.3</testng.version>
 		<selenium.version>3.14.0</selenium.version>
 		<httpclient.version>4.3.1</httpclient.version>
-		
-		 <defaultSuiteFiles>
-	        ./Sets/Suits/CMS_Administration_SiteBackup_029.xml,
-	    </defaultSuiteFiles>
-	    <suiteFile>${defaultSuiteFiles}</suiteFile>
-	
-	
 	    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	
-
 
 	<dependencies>
 
@@ -85,12 +79,82 @@
 
 	</dependencies>
 	
-
-	
 	<build>
-		<!-- finalName>CounterWebApp</finalName-->
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>2.3.1</version>
+					<configuration>
+						<source>1.7</source>
+						<target>1.7</target>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
 		<plugins>
-			<!-- plugin>
+			<plugin>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.6</version>
+				<executions>
+					<execution>
+						<id>copy-resources</id>
+						<phase>validate</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${basedir}/target/Crunchify</outputDirectory>
+							<resources>
+								<resource>
+									<directory>resources</directory>
+									<filtering>true</filtering>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>copy-dependencies</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>copy-dependencies</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${project.build.directory}/Crunchify/lib</outputDirectory>
+							<overWriteReleases>false</overWriteReleases>
+							<overWriteSnapshots>false</overWriteSnapshots>
+							<overWriteIfNewer>true</overWriteIfNewer>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+							<classpathPrefix>lib/</classpathPrefix>
+							<mainClass>com.crunchify.tutorial.CrunchifyMain</mainClass>
+						</manifest>
+						<manifestEntries>
+							<Class-Path>.</Class-Path>
+						</manifestEntries>
+					</archive>
+ 
+					<finalName>Crunchify/Crunchify</finalName>
+				</configuration>
+			</plugin>
+			
+			<plugin>
 		        <groupId>org.apache.maven.plugins</groupId>
 		        <artifactId>maven-surefire-plugin</artifactId>
 		        <version>2.22.0</version>
@@ -99,7 +163,7 @@
 					    <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
 					</suiteXmlFiles>
 		        </configuration>
-		      </plugin-->
+		      </plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-eclipse-plugin</artifactId>
@@ -118,6 +182,72 @@
 					<target>${jdk.version}</target>
 				</configuration>
 			</plugin>
+			
+		</plugins>
+	</build>
+
+	
+	<!-- build>
+		< finalName>CounterWebApp</finalName-->
+		<!-- plugins -->
+			<!-- plugin>
+		        <groupId>org.apache.maven.plugins</groupId>
+		        <artifactId>maven-surefire-plugin</artifactId>
+		        <version>2.22.0</version>
+		        <configuration>
+		         	<suiteXmlFiles>
+					    <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
+					</suiteXmlFiles>
+		        </configuration>
+		      </plugin-->
+			<!--plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<version>2.9</version>
+				<configuration>
+					<downloadSources>true</downloadSources>
+					<downloadJavadocs>false</downloadJavadocs>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.0</version>
+				<configuration>
+					<source>${jdk.version}</source>
+					<target>${jdk.version}</target>
+				</configuration>
+			</plugin>
+			<plugin>
+            <artifactId>maven-dependency-plugin</artifactId>
+            <executions>
+              <execution>
+                <phase>install</phase>
+                <goals>
+                  <goal>copy-dependencies</goal>
+                </goals>
+                <configuration>
+                  <outputDirectory>${project.build.directory}/lib</outputDirectory>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+	        <artifactId>maven-assembly-plugin</artifactId>
+	        <executions>
+	          <execution>
+	            <phase>package</phase>
+	            <goals>
+	              <goal>single</goal>
+	            </goals>
+	          </execution>
+	        </executions>
+	        <configuration>
+	          <descriptorRefs>
+	            <descriptorRef>jar-with-dependencies</descriptorRef>
+	          </descriptorRefs>
+	        </configuration>
+	      </plugin>
 			
 			
 			
@@ -157,5 +287,5 @@
             </plugins>
         </build>
     </profile>
-</profiles>
+</profiles-->
 </project>

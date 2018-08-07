@@ -1,4 +1,4 @@
-package com.veerendra.testng.examples.loadtest;
+package com.veerendra.testng.examples.google;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -15,7 +15,7 @@ public class TestMultiples {
 	
 	  @BeforeClass
 	  public void beforeClass() {
-		  System.setProperty("webdriver.chrome.driver", "C:\\Users\\Veerendra\\Downloads\\chromedriver_win32\\chromedriver.exe");
+		  System.setProperty("webdriver.chrome.driver", "C:\\Users\\Matias\\Downloads\\chromedriver_win32\\chromedriver.exe");
 	      driver = new ChromeDriver();
 	  }
 
@@ -33,14 +33,7 @@ public class TestMultiples {
 
 	}
 	
-	@Test(dependsOnMethods = { "loadTestGoogle" })	
-	public void loadTestNorthernTrust() {
 
-		driver.get("http://www.ntrs.com");
-		System.out.println("Page Title is " + driver.getTitle());
-		Assert.assertEquals("Northern Trust | Wealth Management, Asset Management & Asset Servicing", driver.getTitle());
-
-	}
 
 	
 

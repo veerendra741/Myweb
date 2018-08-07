@@ -3,7 +3,7 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-      <class name="com.veerendra.testng.examples.google.TestMultiples"/>
+      <class name="com.veerendra.testng.examples.loadtest.TestMultiples2"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
