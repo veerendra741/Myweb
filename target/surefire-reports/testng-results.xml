@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="12159" started-at="2018-08-07T03:54:47Z" finished-at="2018-08-07T03:54:59Z">
+  <suite name="Suite" duration-ms="12439" started-at="2018-08-07T15:01:35Z" finished-at="2018-08-07T15:01:48Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="12159" started-at="2018-08-07T03:54:47Z" finished-at="2018-08-07T03:54:59Z">
+    <test name="Test" duration-ms="12439" started-at="2018-08-07T15:01:35Z" finished-at="2018-08-07T15:01:48Z">
       <class name="com.veerendra.testng.examples.loadtest.TestMultiples2">
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.veerendra.testng.examples.loadtest.TestMultiples2@2096442d]" name="beforeClass" is-config="true" duration-ms="3522" started-at="2018-08-07T03:54:47Z" finished-at="2018-08-07T03:54:50Z">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.veerendra.testng.examples.loadtest.TestMultiples2@234bef66]" name="beforeClass" is-config="true" duration-ms="6361" started-at="2018-08-07T15:01:35Z" finished-at="2018-08-07T15:01:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="loadTestNorthernTrust()[pri:0, instance:com.veerendra.testng.examples.loadtest.TestMultiples2@2096442d]" name="loadTestNorthernTrust" duration-ms="7862" started-at="2018-08-07T03:54:50Z" finished-at="2018-08-07T03:54:58Z">
+        <test-method status="PASS" signature="loadTestNorthernTrust()[pri:0, instance:com.veerendra.testng.examples.loadtest.TestMultiples2@234bef66]" name="loadTestNorthernTrust" duration-ms="5304" started-at="2018-08-07T15:01:41Z" finished-at="2018-08-07T15:01:47Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loadTestNorthernTrust -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.veerendra.testng.examples.loadtest.TestMultiples2@2096442d]" name="afterClass" is-config="true" duration-ms="753" started-at="2018-08-07T03:54:58Z" finished-at="2018-08-07T03:54:59Z">
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.veerendra.testng.examples.loadtest.TestMultiples2@234bef66]" name="afterClass" is-config="true" duration-ms="754" started-at="2018-08-07T15:01:47Z" finished-at="2018-08-07T15:01:48Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->

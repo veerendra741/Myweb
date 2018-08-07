@@ -7,6 +7,9 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import java.io.File;
+import java.net.URL;
+
 
 public class TestMultiples {
 
@@ -15,8 +18,8 @@ public class TestMultiples {
 	
 	  @BeforeClass
 	  public void beforeClass() {
-		  System.setProperty("webdriver.chrome.driver", "C:\\Users\\Matias\\Downloads\\chromedriver_win32\\chromedriver.exe");
-	      driver = new ChromeDriver();
+		  System.setProperty("webdriver.chrome.driver", ".\\src\\resources\\drivers\\chromedriver.exe");
+		  driver = new ChromeDriver();
 	  }
 
 	  @AfterClass
